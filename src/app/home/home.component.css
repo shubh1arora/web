@@ -1,0 +1,11 @@
+.welcome-card{
+text-align: center;
+}
+
+.box{
+  border: 1px solid black;
+  align-items: center;
+  margin-right: auto;
+  margin-left: auto;
+  width: 80%;
+}

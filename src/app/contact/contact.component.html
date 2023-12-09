@@ -1,0 +1,51 @@
+<form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="mt-4">
+  <div class="mb-3">
+    <label for="name" class="form-label">Name:</label>
+    <input type="text" id="name" formControlName="name" class="form-control">
+    <div *ngIf="contactForm.get('name')?.invalid && contactForm.get('name')?.touched" class="text-danger">
+      <div *ngIf="contactForm.get('name')?.hasError('required')">Name is required</div>
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <label for="email" class="form-label">Email:</label>
+    <input type="email" id="email" formControlName="email" class="form-control">
+    <div *ngIf="contactForm.get('email')?.invalid && contactForm.get('email')?.touched" class="text-danger">
+      <div *ngIf="contactForm.get('email')?.hasError('required')">Email is required</div>
+      <div *ngIf="contactForm.get('email')?.hasError('email')">Invalid email format</div>
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <label for="phone" class="form-label">Phone:</label>
+    <input type="text" id="phone" formControlName="phone" class="form-control">
+    <div *ngIf="contactForm.get('phone')?.invalid && contactForm.get('phone')?.touched" class="text-danger">
+      <div *ngIf="contactForm.get('phone')?.hasError('required')">Phone number is required</div>
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <label for="serviceType" class="form-label">Service Type:</label>
+    <select id="serviceType" formControlName="serviceType" class="form-select">
+      <option value="" disabled>Select Service Type</option>
+      <option *ngFor="let type of serviceTypes" [value]="type">{{ type }}</option>
+    </select>
+    <div *ngIf="contactForm.get('serviceType')?.invalid && contactForm.get('serviceType')?.touched" class="text-danger">
+      <div *ngIf="contactForm.get('serviceType')?.hasError('required')">Service type is required</div>
+    </div>
+  </div>
+
+
+
+
+  <div class="mb-3">
+    <button type="submit" [disabled]="contactForm.invalid" class="btn btn-primary  w-100"
+      (click)="setsubmitted()">Submit information</button>
+  </div>
+  <div *ngIf="submitted" class="mb-3 mt-4 w-100  text-xl-center alert">
+    <p>our representatives will get in touch with you shortly!!! thanks for your concern !</p>
+  </div>
+
+</form>
+
+<hr>

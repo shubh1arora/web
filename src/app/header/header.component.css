@@ -1,0 +1,29 @@
+mat-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: blue;
+    
+  }
+  
+  .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .spacer {
+    flex: 1;
+  }
+  
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+  }
+  
+  .nav-links a:hover {
+    text-decoration: underline;
+  }
+  

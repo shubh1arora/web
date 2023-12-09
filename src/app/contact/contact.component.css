@@ -1,0 +1,15 @@
+.form-group{
+    width:30%;
+    float: left;
+    margin-left: 5px;
+}
+
+button{
+    margin-top: 22px;
+    text-align: center;
+    margin-left: 7px;
+}
+
+.errormsg{
+    color: red;
+}
