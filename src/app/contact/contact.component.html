@@ -1,5 +1,5 @@
 <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="mt-4" action="mailto:shubhamarora140@gmail.com" method="POST" enctype="text/plain" >
-  <div class="mb-3">
+  <div class="mb-3 ">
     <label for="name" class="form-label">Name:</label>
     <input type="text" id="name" formControlName="name" class="form-control">
     <div *ngIf="contactForm.get('name')?.invalid && contactForm.get('name')?.touched" class="text-danger">
@@ -9,7 +9,7 @@
 
   <div class="mb-3">
     <label for="email" class="form-label">Email:</label>
-    <input type="email" id="email" formControlName="email" class="form-control">
+    <input type="email" id="email" formControlName="email" class="form-control ">
     <div *ngIf="contactForm.get('email')?.invalid && contactForm.get('email')?.touched" class="text-danger">
       <div *ngIf="contactForm.get('email')?.hasError('required')">Email is required</div>
       <div *ngIf="contactForm.get('email')?.hasError('email')">Invalid email format</div>
@@ -38,7 +38,7 @@
 
 
 
-  <div class="mb-3">
+  <div class="mb-3 mt-5">
     <button type="submit" [disabled]="contactForm.invalid" class="btn btn-primary  w-100"
       (click)="setsubmitted()">Submit information</button>
   </div>
